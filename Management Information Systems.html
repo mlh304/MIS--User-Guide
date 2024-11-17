@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Management Information Systems.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p style="text-align:center"><img src= "images.png" width="100" height="100">
+</p>
+<h1 style=text-align:center; Center Heading 
+<br>
+St.Teresa International University, Thailand
+<br>
+Management Information Systems
+<br>
+User Guide </h1>
+<div style=page-break-after:always; visibility:hidden\pagebreak
+</div>
+<p align="center">
+ Copyright
+ <br>
+  St Teresa International University 2024</p> 
+<div style=page-break-after:always; visibility:hidden\pagebreak
+</div>
+<p>Table of Content</p>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#displaying-information-on-the-dashboard">Displaying information on the dashboard</a></li>
+<li><a href="#knowing-the-rules-and-regulations-of-the-university">Knowing the rules and regulations of the university</a></li>
+<li><a href="#invigilating-the-students-in-exams">Invigilating the students in exams</a></li>
+<li><a href="#creating-a-thai-quality-framework-tqf">Creating a Thai Quality Framework (TQF)</a></li>
+<li><a href="#submitting-the-exam-marks">Submitting the exam marks</a></li>
+<li><a href="#using-mis-to-sign-in-the-google-classroom">Using MIS to sign in the Google Classroom</a></li>
+<li><a href="#registering-department-activities-on-the-stic-page">Registering department activities on the STIC page</a></li>
+<li><a href="#submitting-stic-news-article">Submitting STIC news article</a></li>
+<li><a href="#tracking-the-advisees-information">Tracking the advisee’s information</a></li>
+<li><a href="#submitting-an-advisor-meeting-report-in-mis">Submitting an advisor meeting report in MIS</a></li>
+<li><a href="#exporting-the-advisee-midterm-score">Exporting the advisee midterm score</a></li>
+<li><a href="#exporting-the-advisee-grades">Exporting the advisee grades</a></li>
+<li><a href="#exporting-the-advisee-attendance-report">Exporting the advisee attendance report</a></li>
+<li><a href="#exporting-the-advisee-toeic-score">Exporting the advisee TOEIC score</a></li>
+</ul>
+<div style=page-break-after:always; visibility:hidden\pagebreak
+</div>
+<h1 id="overview">Overview</h1>
+<p align= "justify"> Management Information Systems (MIS) improve the function of academic and administrative systems through digital services. So, administrators can track/comment on teachers' workloads, students’ progress, and activities in different departments without human interaction.</p>
+<p>There are three types of users involved in MIS access.</p>
+<ul>
+<li>Administrators</li>
+<li>IT Department/Registration Office</li>
+<li>Teachers</li>
+</ul>
+<p>This user guide helps the teachers to know how to access MIS effectively.</p>
+<p><strong>Prerequisites</strong></p>
+<p>The following prerequisites are common to access MIS.</p>
+<ul>
+<li>Login access</li>
+<li>User ID &amp; Password</li>
+<li>Compatible browser</li>
+</ul>
+<p>To access the MIS,</p>
+<ol>
+<li>On the browser, enter <strong>mis.trsu.ac.th</strong>.</li>
+<li>Select <strong>Login</strong> and enter your <strong>User ID &amp; Password</strong> to verify your account.</li>
+</ol>
+<p>These steps are common to perform all the actions in MIS.</p>
+<div style=page-break-after:always;visibility:hidden\pagebreak</div>
+<h1 id="displaying-information-on-the-dashboard">Displaying information on the dashboard</h1>
+<p align="justify"> This guide helps you get short notifications of your entire task performance in MIS. This dashboard contains the list of features in MIS to track your actions and performance. </p>
+<ul>
+<li>Urgent task completion</li>
+<li>Important announcements</li>
+<li>Student’s attendance</li>
+<li>TQF3 &amp; TQF5 approval status</li>
+<li>Total number of students enrolled in your subjects</li>
+<li>Total number of Advisees</li>
+<li>Number of courses assigned</li>
+<li>Number of major students on your course</li>
+<li>Print allowance and utilization</li>
+<li>Underperforming advisee’s details</li>
+<li>Comments and suggestions of the MIS</li>
+</ul>
+<div style=page-break-after:always;visinbility:hidden\pagebreak</div>
+<h1 id="knowing-the-rules-and-regulations-of-the-university">Knowing the rules and regulations of the university</h1>
+<p align="justify"> The teacher has to know the rules and regulations of the university to maintain a safe environment for the teaching and learning process. They can emphasize to the students to follow proper guidelines in the academic activities inside the campus.</p>
+<p>To find the rules and regulations,</p>
+<ol>
+<li>After login, select <strong>Rules and Regulations</strong> from the main menu.</li>
+<li>On the right-side pane, select <strong>Department heads in the academic/management</strong> to know their contact details and rules and regulations of the university.</li>
+</ol>
+<p>You got the rules and regulations of the university, and the head's contact details successfully.</p>
+<div style=page-break-after:always;visibility:hidden\pagebreak</div>
+<h1 id="invigilating-the-students-in-exams">Invigilating the students in exams</h1>
+<p align="justify">The university provides online facilities to teachers to monitor students when they cannot attend the online exam due to their severe illness. During this time, the registration office provides access to monitor the students who are attending the online exam. </p>
+<p>To invigilate the exams,</p>
+<ol>
+<li>On the main menu, Select <strong>Moodle Invigilation</strong> to perform the following steps:<br>
+a. On the right-side pane, select <strong>LMS link</strong> to enter the LMS webpage.
+b. On the LMS menu, enter your <strong>User ID and Password</strong>.<br>
+c. Select <strong>Enroll to Assign Questions</strong> to the students who are enrolled in the online exam.</li>
+<li>On the dashboard, check the student’s examination progress.</li>
+<li>Select <strong>Confirm</strong> on the menu when the students submit their exam.</li>
+<li>Select <strong>Log Out</strong> to complete the exam.</li>
+</ol>
+<p>You have completed the exam invigilation.</p>
+<div style=page-break-after:always; visibility: hidden\pagebreak </div>
+<h1 id="creating-a-thai-quality-framework-tqf">Creating a Thai Quality Framework (TQF)</h1>
+<p align="justify"> MIS digital system that helps the teachers to prepare a digital TQF. Also, it simplifies the process of getting approval from the reviewer without any direct interaction. </p>
+<p>To create a TQF,</p>
+<ol>
+<li>On the main menu, select <strong>TQF (Lecturer Level)</strong> under the teacher option.</li>
+<li>Select <strong>Academic Year</strong> with respect to performing the following steps:<br>
+a.	On the bottom pane, select <strong>Expand</strong> to get the course list according to the academic year and semester level that you want to create a lesson plan.<br>
+b.	On the right-side pane, select <strong>TQF3</strong> to create a lesson plan for that subject.<br>
+c.	On the bottom pane, select <strong>Expand/Collapse</strong> to view the individual lesson plan’s sections or all the sections at one time to view the major and minor learning outcomes of the subject.<br>
+d.	On the right-side pane, select <strong>Section 4</strong> to create your lesson plan.
+e.	Select <strong>Section 4.1</strong> to enter your teaching plan's <strong>Unit Topic, Learning Content, and Learning Outcome</strong> for the subject.<br>
+f.	Select <strong>Section 4.2</strong> to enter the <strong>Assessment plan</strong> of the subject.</li>
+<li>On the bottom pane, select <strong>Save</strong> to restore your content for continuing next time.</li>
+<li>On the bottom pane, select <strong>Save+</strong> Confirm to send your tqf3 to the reviewer.<br>
+<strong>Note:</strong> if the reviewers made a comment to add the information, follow the same instructions to complete the TQF3.</li>
+</ol>
+<p>The course TQF3 is successfully created.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="submitting-the-exam-marks">Submitting the exam marks</h1>
+<p align="center"> Students’ academic knowledge and skills are evaluated through the midterm and final exams. Based on the students’ performance the teacher will give the score and upload those scores in the MIS to award the grades.  </p>
+<p>To submit the exam marks,</p>
+<ol>
+<li>On the main menu, select <strong>Exam Marks</strong> under the advisor option.</li>
+<li>On the right-side pane, select <strong>Academic Year</strong> with respect to performing the following steps:<br>
+a.	On the right-side pane, select <strong>Midterm or Final Exam</strong> under Step 2 Online Submission to submit the marks for the respective subject.<br>
+b. You can choose any one of the options to enter the student’s scores that are numeric keys, slide to set number or virtual numeric key.<br>
+c.	On the right-side pane, select <strong>Status</strong> to register the student’s exam status if anyone is absent or misbehaved in the exam.
+<strong>Note:</strong> consequently, choose Save from the bottom pane to safe your mark entry from external losses.</li>
+<li>On the bottom pane, select <strong>Upload</strong> to add the scanned copy of the physical marks sheet.</li>
+<li>Select <strong>Submit</strong> to complete your mark entry in the MIS.</li>
+</ol>
+<p>The students’ marks are successfully submitted in the MIS.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="using-mis-to-sign-in-the-google-classroom">Using MIS to sign in the Google Classroom</h1>
+<p align="justify"> MIS provides direct access to Google Classroom for uploading the subject matters on the respective subject’s page. So, the teachers can easily enter their subjects from the MIS.</p>  
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>University Gmail ID and Password.</li>
+</ul>
+<p>To enter the Google Classroom,</p>
+<ol>
+<li>On the main menu, select <strong>Google Classroom</strong> under the teacher option.</li>
+<li>On the right-side pane, select <strong>Course and Section</strong> that you want to direct it to the course page in the Google Classroom.</li>
+<li>On the sign-in page, enter your <strong>University mail/ Mobile number</strong> followed by entering your <strong>Password</strong> to log in to the Google Classroom.</li>
+<li>After successful sign-in, you can upload your course materials and assignments to the Google Classroom for students.</li>
+</ol>
+<p>The teacher’s Google Classroom is successfully signed in through the MIS.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="registering-department-activities-on-the-stic-page">Registering department activities on the STIC page</h1>
+<p align="justify">The department head or the faculty members of the respective department have to inform their department activities/events to the management through the MIS. MIS has a link with the Google form that provides the facilities to detail about the activity/event.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>University Gmail ID and Password.</li>
+</ul>
+<p>To register for the event,</p>
+<ol>
+<li>On the main menu, select <strong>Register an Event</strong> under Events &amp; Activities to perform the following steps:
+a. On the new tab you will direct to the Gmail Sign-in page to enter your <strong>University Mail ID and Password</strong>.<br>
+b.	Complete your sign-in process that leads to the event registration Google form.<br>
+c.	On the Google form, enter <strong>Event Information</strong> with details.<br>
+<strong>Note:</strong> Send me a copy of my responses if you need a backup of the form.</li>
+<li>Enter <strong>Submit</strong> to finalize your event registration.</li>
+</ol>
+<p>The event registration is successfully completed.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="submitting-stic-news-article">Submitting STIC news article</h1>
+<p align="justify"> The department head or the faculty members of the respective department have to report their accomplished activities/events articles to publish in the STIC newsletter.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>University Gmail ID and Password</li>
+</ul>
+<p>To submit a news article,</p>
+<ol>
+<li>On the main menu, select <strong>STIC News</strong> under Events &amp; Activities to perform the following steps:
+a. On the new tab you will be directed to the Gmail Sign-in page to enter your <strong>University Mail ID and Password</strong> that leads to the event registration Google form.<br>
+b.	On the Google form, enter your accomplished <strong>Event Information and upload the pictures</strong> for the university newsletter.</li>
+<li>Enter <strong>Submit</strong> to complete the submission of the report.</li>
+</ol>
+<p>The newsletter is successfully submitted through the MIS to the management representative.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="tracking-the-advisees-information">Tracking the advisee’s information</h1>
+<p align="justify"> The advisor has to track the advisee’s personal information, timetable, semester grade, and cumulative grade percentage that helps to guide the students to improve their academic performance.</p>  
+<p>To track the advisee’s information,</p>
+<ol>
+<li>On the main menu, select <strong>Advisee Profiles</strong> under the Advisor option.</li>
+<li>On the right-side pane, select <strong>Student Registration Code</strong> from the Student Master List to collect the advisee’s personal/academic information.</li>
+<li>On the advisee page, select <strong>Timetable</strong> to know the advisee’s current semester subject timetable.</li>
+<li>On the semester page, select <strong>Calculate GPA</strong> to know the advisees each semester SGPA and CGPA.</li>
+</ol>
+<p>The advisor has successfully tracked the advisee’s personal and academic information to monitor their performance.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="submitting-an-advisor-meeting-report-in-mis">Submitting an advisor meeting report in MIS</h1>
+<p align="justify"> Advisor reports are important to follow up on the student’s performance and progress in the academic activities. Also, advisors need to submit their advisor report through the MIS to the academic head and management to monitor the student’s engagement in the academic.</p>
+<p>To create an advisor report,</p>
+<ol>
+<li>On the main menu, select <strong>Advisor Reporting</strong> under the Advisor option.</li>
+<li>On the right-side pane, select <strong>Academic Year</strong> with respect to performing the following steps:<br>
+a.	Select <strong>Add Report</strong> to update the advisor meeting report for the respective weeks.<br>
+b.	On the create report, select the following mandatory details to fill up<br>
+i.	Week<br>
+ii.	Date of Counselling<br>
+iii.	Time Period<br>
+iv.	Room<br>
+v.	Group/Section<br>
+vi.	No. of students present in the advisor meeting<br>
+c.	On the screen, select Issues/Concerns Discussed to enter advisor &amp; advisee discussion details.<br>
+d.	On the screen, select <strong>Issues/Concerns Unanswered</strong> to enter the Future update/progress information. Also, select <strong>Recommendations</strong> to enter the feedback information of the meeting.<br>
+e.	On the bottom pane, select <strong>Save</strong> to update the advisor’s report.</li>
+</ol>
+<p>The advisor meeting report is successfully submitted.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="exporting-the-advisee-midterm-score">Exporting the advisee midterm score</h1>
+<p align="justify"> The advisor has access to export the advisee’s midterm score in all subjects that helps to track the advisee’s academic performance and guides them to improve their studies. </p> 
+<p>To export the advisee’s midterm exam report,</p>
+<ol>
+<li>On the main menu, select <strong>Advisee Midterm Score Export</strong> to download the advisee’s score report.</li>
+<li>On the right-side pane, select <strong>Semesters</strong> respective to the required academic year’s report. You will receive the score report in Excel (.xlsx) format.</li>
+</ol>
+<p>The advisee’s midterm exam score report is successfully exported.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="exporting-the-advisee-grades">Exporting the advisee grades</h1>
+<p align="justify"> The advisor has access to export the advisee’s final exam score in all the subjects that helps to guide the students to improve their CGPA in forthcoming semesters.</p>
+<p>To export the advisee’s grade report,</p>
+<ol>
+<li>On the main menu, select <strong>Advisee Grade Export</strong> to download the score report.</li>
+<li>On the right-side pane, select <strong>Semester</strong> with respect to the academic year that you need to export the score report in Excel (.xlsx) format.</li>
+</ol>
+<p>The advisee’s final exam score report is successfully exported.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="exporting-the-advisee-attendance-report">Exporting the advisee attendance report</h1>
+<p align="justify"> The advisor has access to export the advisee’s attendance report for all the subjects to ensure that the advisees are attending the classes properly.</p>  
+<p>To export the TOEIC score report,</p>
+<ol>
+<li>On the main menu, select A<strong>dvisee Attendance Export</strong> to download the attendance report.</li>
+<li>On the right-side pane, select <strong>Semester</strong> with respect to the academic year that you need to export the attendance report in Excel (.xlsx) format.</li>
+</ol>
+<p>The advisee’s attendance report is successfully exported.</p>
+<div style=page-break-after:always; visibility:hidden\pagebreak </div>
+<h1 id="exporting-the-advisee-toeic-score">Exporting the advisee TOEIC score</h1>
+<p align="justify"> The advisor has access to export the advisee’s final exam score in all the subjects and helps to monitor the advisee’s improvement in the English language proficiency test. </p>
+<p>To export the TOEIC score report,</p>
+<ol>
+<li>On the main menu, select <strong>Advisee TOEIC Score Export</strong> to download the TOEIC report.</li>
+<li>On the right-side pane, select <strong>Semester</strong> with respect to the academic year that you need to export the attendance report in Excel (.xlsx) format.</li>
+</ol>
+<p>The advisee's TOEIC score report is successfully exported.</p>
+
+</body>
+</html>
